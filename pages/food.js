@@ -22,7 +22,7 @@ export default function Food() {
         <div className={styles.container}>
             <main className={styles.main}>
                 <select id="" className={styles.select} name="" onChange={e => updateTypeOfPlace(e.target.value)}>
-                    <option value="DEFAULT" defaultValue>Whatcha feelin G?</option>
+                    <option className={styles.option} value="DEFAULT">Whatcha feelin G?</option>
                     <option value="Drinks">Drinks</option>
                     <option value="Coffee">Coffee</option>
                     <option value="Burgers">Burgers</option>
