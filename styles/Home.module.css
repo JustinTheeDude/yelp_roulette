@@ -145,6 +145,10 @@
     text-align: center;
 }
 
+.select::placeholder {
+    color: #fff;
+}
+
 @media (min-width: 768px) {
     .select {
         height: 100px;
