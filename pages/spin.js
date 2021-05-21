@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 
 export default function Spin(props) {
     const businesses = props.json.businesses.map(business => business.name);
+    const urls = props.json.businesses.map(business => business.url);
     const getRandomIndex = (listLength) => Math.floor(Math.random() * listLength);
     const [timer, setTime] = useState(false);
     const [reroll, setReroll] = useState(false);
@@ -32,7 +33,7 @@ export default function Spin(props) {
                     </>
                     :
                     <>
-                        <h1 className={styles.header}>{businesses[getRandomIndex(businesses.length)]}</h1>
+                        <a className={styles.header} href={urls[getRandomIndex(businesses.length)]} target="_blank">{businesses[getRandomIndex(businesses.length)]}</a>
                         <button className={styles.button} onClick={() => reRoll()}>Reroll!</button>
                     </>
                 }
@@ -42,7 +43,7 @@ export default function Spin(props) {
 }
 
 export async function getServerSideProps({ query }) {
-    const API_KEY = "HF3aj20l--aSTBbFhVxM2wk1e8YEYz2i8Y-tv2D3BEc1FRs8kUaOGf15-PsesfiokIFNUGy4Xi701dxR28YfuLq3XzRSOHwBQhHuyHPBFJomuykvdTRBuEmxqw2fYHYx";
+    const API_KEY = process.env.API_KEY;
     const url = `https://api.yelp.com/v3/businesses/search?term=${query.term}&location=${query.location}`;
     const res = await fetch(url, {
         headers: {

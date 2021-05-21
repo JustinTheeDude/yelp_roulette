@@ -25,6 +25,7 @@ export default function Food() {
                     <option className={styles.option} value="DEFAULT">Whatcha feelin G?</option>
                     <option value="Drinks">Drinks</option>
                     <option value="Coffee">Coffee</option>
+                    <option value="Dispensary">Dispensary</option>
                     <option value="Burgers">Burgers</option>
                 </select>
                 {selectedError ? <p>Select somethin G</p> : null}
