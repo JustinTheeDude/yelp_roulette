@@ -23,6 +23,8 @@ export default function Spin(props) {
         }
     }
 
+    const foodIndex = getRandomIndex(businesses.length);
+
     return (
         <div className={styles.container}>
             <main className={styles.main}>
@@ -33,7 +35,7 @@ export default function Spin(props) {
                     </>
                     :
                     <>
-                        <a className={styles.header} href={urls[getRandomIndex(businesses.length)]} target="_blank">{businesses[getRandomIndex(businesses.length)]}</a>
+                        <a className={styles.header} href={urls[foodIndex]} target="_blank">{businesses[foodIndex]}</a>
                         <button className={styles.button} onClick={() => reRoll()}>Reroll!</button>
                     </>
                 }

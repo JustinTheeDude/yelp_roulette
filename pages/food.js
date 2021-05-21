@@ -23,10 +23,11 @@ export default function Food() {
             <main className={styles.main}>
                 <select id="" className={styles.select} name="" onChange={e => updateTypeOfPlace(e.target.value)}>
                     <option className={styles.option} value="DEFAULT">Whatcha feelin G?</option>
-                    <option value="Drinks">Drinks</option>
+                    <option value="Beer">Beers</option>
                     <option value="Coffee">Coffee</option>
                     <option value="Dispensary">Dispensary</option>
-                    <option value="Burgers">Burgers</option>
+                    <option value="Hamburger">Burgers</option>
+                    <option value="Pizza">Pizza</option>
                 </select>
                 {selectedError ? <p>Select somethin G</p> : null}
                 <button className={styles.button} onClick={() => handleSelect(typeOfPlace)}>Next -></button>
