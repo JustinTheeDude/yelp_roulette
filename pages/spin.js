@@ -1,3 +1,4 @@
+import Image from "next/image"
 import styles from '../styles/Home.module.css';
 import { useState, useEffect } from 'react';
 import { Transition, animated, useSpring } from 'react-spring';
@@ -7,6 +8,7 @@ import { useRouter } from 'next/router';
 export default function Spin(props) {
     const businesses = props.json.businesses.map(business => business.name);
     const urls = props.json.businesses.map(business => business.url);
+    const photos = props.json.businesses.map(business => business.image_url)
     const getRandomIndex = (listLength) => Math.floor(Math.random() * listLength);
     const [timer, setTime] = useState(false);
     const [reroll, setReroll] = useState(false);
@@ -35,6 +37,7 @@ export default function Spin(props) {
                     </>
                     :
                     <>
+                        <Image src={photos[foodIndex]} alt="" width={500} height={500} className={styles.image}/>
                         <a className={styles.header} href={urls[foodIndex]} target="_blank">{businesses[foodIndex]}</a>
                         <button className={styles.button} onClick={() => reRoll()}>Reroll!</button>
                     </>

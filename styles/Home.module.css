@@ -190,3 +190,7 @@
 .input::placeholder {
     color: #fff;
 }
+
+.image {
+    display: block;
+}
